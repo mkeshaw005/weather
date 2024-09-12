@@ -15,8 +15,8 @@ When the application starts, you will be prompted for an address in the followin
   * state: (e.g. CO)
   * zipcode: (e.g. 80204)
  <hr />
-The application will then use the census.gov api to convert the supplied address to a <code>latitude, logitude</code> coordinate pair<br />
-which will be used to find the nearest observation station, from which the available historic weather data will be retrieved and<br />
+The application will then use the census.gov api to convert the supplied address to a <code>latitude, logitude</code> coordinate pair
+which will be used to find the nearest observation station, from which the available historic weather data will be retrieved and
 displayed.
 
 ```mermaid
