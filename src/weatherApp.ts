@@ -52,7 +52,7 @@ export class WeatherApp {
   ): string {
     let historicTemperatureOutputStr = "Date\t\tMax Temp\t\tMin Temp\t\n";
     historicTemperatureOutputStr +=
-      "---------------------------------------------------------------------\n";
+      "----------------------------------------------------------------------\n";
     for (const [key, value] of Object.entries(
       historicTemperatureValues.historicTemperatureExtremes
     )) {
