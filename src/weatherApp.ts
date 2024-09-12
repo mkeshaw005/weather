@@ -24,8 +24,9 @@ export class WeatherApp {
     );
 
     this.queryTargetCoords = await geocoderRequestRunner.run();
-    console.log("queryTargetCoords");
-    console.log(this.queryTargetCoords);
+    if (this.queryTargetCoords == null) {
+      return "Invalid address";
+    }
     let pointsRequestRunner = new PointsRequestRunner(this.queryTargetCoords);
     let observationStationsUrl: string = await pointsRequestRunner.run();
     let gridPointsRunner = new GridPointsRunner(observationStationsUrl);

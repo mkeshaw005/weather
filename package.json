@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon main.ts",
     "start": "node dist/index.js",
     "test": "jest --forceExit --coverage --verbose"
   },

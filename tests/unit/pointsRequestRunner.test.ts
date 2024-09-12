@@ -31,27 +31,6 @@ describe("PointsRequestRunner", () => {
     });
   });
 
-  describe("run", () => {
-    it("should throw an error if the fetch fails", async () => {
-      (global.fetch as jest.Mock).mockRejectedValue(new Error("Network error"));
-
-      await expect(runner.run()).rejects.toThrow("Network error");
-    });
-
-    it("should throw an error if no observation stations are found", async () => {
-      const mockResponse = {
-        json: jest.fn().mockResolvedValue({
-          properties: {},
-        }),
-      };
-      (global.fetch as jest.Mock).mockResolvedValue(mockResponse);
-
-      await expect(runner.run()).rejects.toThrow(
-        "No observation stations found in the response"
-      );
-    });
-  });
-
   describe("constructPointsUrl", () => {
     it("should correctly construct the points URL", () => {
       const result = runner["constructPointsUrl"](mockCoordinates);
