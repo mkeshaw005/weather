@@ -4,6 +4,7 @@ A simple CLI tool for retrieving and displaying historic weather data for a supp
 ## Setup
 Clone the repo and then run:
   * <code>npm install</code> to install dependencies
+  * <code>npm run test</code> to run tests
   * <code>npm run build</code> to compile typescript files to javascript
   * <code>npm start</code> to start the application
 
@@ -91,3 +92,4 @@ sequenceDiagram
     * The architecture design of the system also takes testing into consideration: the interactions with external systems (user input via CLI and REST API calls) are done in separate components from where the business logic happens, allowing for a more extensible and testable code base.
 * Mathematical precision: given that the data source is for observations in the United States, the distance calculations for all the observation station within a grid are quite accurate (the furthest possible distance being calculated between two points is no more than the diagnal between opposite vertices of a 2.k5m x 2.5km quadralateral --- an extreme edge case calculating the distance between oposite points on the globe yielded less than 70m  delta from the expected value)
 * API error handling: currently the app only handles success (ok / 200), not found (404), and internal server error (500).  If the server returns a status code of 500, the application will wait 5 seconds (the timeout specified in the api.weather.gov docs for rate limiting -- all other errors are unspecified) and tries again once.  An enhancement would be to implement multiple retries (set in an external configuration ffle) with exponential back off (also set in an external configuration file).
+* More test coverage (unit and integration)!
